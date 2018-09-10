@@ -1,26 +1,29 @@
+from bib.api import JsonApi
+from bib.logging import get_logger
 
 import trio
 import asks
 import pkginfo
 import re
 
+
 req_rgx = re.compile(r"^(?P<req>[\w\-_]+)[ ;]")
 
 
 class Installer:
+  log = get_logger(__name__)
   def __init__(self, index_url, target_dir):
     asks.init("trio")
     self.index_url = index_url
     self.target_dir = trio.Path(target_dir)
     self.session = asks.Session(connections=8)
+    self.session.base_location = index_url
+    self.api = JsonApi(self.session)
 
   async def _fetch_json(self, pkg):
-    url = f"{self.index_url}/{pkg}/json"
-    print(url)
-    resp = await asks.get(url)
-    data = resp.json()
-    whl_url = data["urls"][0]["url"]
-    return whl_url
+    releases = await self.api.get_releases(pkg)
+    last_ver = next(reversed(releases))
+    return releases[last_ver][0]
 
   def _get_requires(self, wheel):
     meta = pkginfo.Wheel(wheel)
@@ -31,7 +34,7 @@ class Installer:
         yield match.group("req")
 
   async def fetch_pkg(self, pkg):
-    print(f"Downloading {pkg}")
+    self.log.debug(f"Downloading {pkg}")
     whl_url = await self._fetch_json(pkg)
     whl_resp = await asks.get(whl_url, stream=True)
     fname = whl_url.split("/")[-1]

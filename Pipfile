@@ -9,6 +9,9 @@ asks = "*"
 bib = {editable = true, path = "."}
 trio-click = "*"
 pkginfo = "*"
+semver = "*"
+packaging = "*"
+pypi-simple = "*"
 
 [dev-packages]
 ipython = "*"

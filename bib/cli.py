@@ -11,7 +11,8 @@ def cli():
 
 @cli.command()
 @click.argument("pkg")
-async def install(pkg):
+@click.option("-t", "--target", default=".")
+async def install(pkg, target):
   from bib.installer import Installer
-  installer = Installer("https://pypi.org/pypi", "tmp")
+  installer = Installer("https://pypi.org/pypi", target)
   await installer.fetch_pkg(pkg)
