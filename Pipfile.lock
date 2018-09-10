@@ -1,0 +1,114 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "2fa394e38af6c9b5e978d3e6e3043aa1503bb413013099e5c6053d6b75930edf"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.7"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "asks": {
+            "hashes": [
+                "sha256:c3fc1115dfeb414ef0863da6f60f02aea7487f92f76b645738774bf93e8577de"
+            ],
+            "index": "pypi",
+            "version": "==2.0.0"
+        },
+        "async-generator": {
+            "hashes": [
+                "sha256:01c7bf666359b4967d2cda0000cc2e4af16a0ae098cbffcb8472fb9e8ad6585b",
+                "sha256:6ebb3d106c12920aaae42ccb6f787ef5eefdcdd166ea3d628fa8476abe712144"
+            ],
+            "markers": "python_version >= '3.5'",
+            "version": "==1.10"
+        },
+        "attrs": {
+            "hashes": [
+                "sha256:10cbf6e27dbce8c30807caf056c8eb50917e0eaafe86347671b57254006c3e69",
+                "sha256:ca4be454458f9dec299268d472aaa5a11f67a4ff70093396e1ceae9c76cf4bbb"
+            ],
+            "version": "==18.2.0"
+        },
+        "bib": {
+            "editable": true,
+            "path": "."
+        },
+        "h11": {
+            "hashes": [
+                "sha256:acca6a44cb52a32ab442b1779adf0875c443c689e9e028f8d831a3769f9c5208",
+                "sha256:f2b1ca39bfed357d1f19ac732913d5f9faa54a5062eca7d2ec3a916cfb7ae4c7"
+            ],
+            "version": "==0.8.1"
+        },
+        "idna": {
+            "hashes": [
+                "sha256:156a6814fb5ac1fc6850fb002e0852d56c0c8d2531923a51032d1b70760e186e",
+                "sha256:684a38a6f903c1d71d6d5fac066b58d7768af4de2b832e426ec79c30daa94a16"
+            ],
+            "version": "==2.7"
+        },
+        "multio": {
+            "hashes": [
+                "sha256:dcaee4d5d77cde8caf7902c8621aaa192febb384c7b1291fd47cfa41ac0eaebc"
+            ],
+            "markers": "python_version >= '3.5.2'",
+            "version": "==0.2.3"
+        },
+        "outcome": {
+            "hashes": [
+                "sha256:d54e5d469088af53022f64a753b288d6bab0fe42e513eb7146137d560e2e516e",
+                "sha256:de68deb145ace3b9217a9461d6bfb4f720fdf01f77bfd65936906d8301bd08d2"
+            ],
+            "version": "==0.1.0"
+        },
+        "pkginfo": {
+            "hashes": [
+                "sha256:5878d542a4b3f237e359926384f1dde4e099c9f5525d236b1840cf704fa8d474",
+                "sha256:a39076cb3eb34c333a0dd390b568e9e1e881c7bf2cc0aee12120636816f55aee"
+            ],
+            "index": "pypi",
+            "version": "==1.4.2"
+        },
+        "sniffio": {
+            "hashes": [
+                "sha256:2e9b81429e3b7c9e119fcee2673ee3be3229982adc68b3f59317863aba05ebb7",
+                "sha256:afb4997584a920e6e378a81ded2b3e71a696b85a68c4bfbe4dadf1ba57a9ef45"
+            ],
+            "markers": "python_version >= '3.5'",
+            "version": "==1.0.0"
+        },
+        "sortedcontainers": {
+            "hashes": [
+                "sha256:607294c6e291a270948420f7ffa1fb3ed47384a4c08db6d1e9c92d08a6981982",
+                "sha256:ef38b128302ee8f65d81e31c9d8fbf10d81df4d6d06c9c0b66f01d33747525bb"
+            ],
+            "version": "==2.0.4"
+        },
+        "trio": {
+            "hashes": [
+                "sha256:f6249159b62f88e8cca9e46af48fcfbf9e03914bc1a0f67beeaf1369b128c135",
+                "sha256:fd12eb79894df43a75924c2c08cd00de255f4344bcba0cea5802ffa60ce84cd1"
+            ],
+            "index": "pypi",
+            "version": "==0.7.0"
+        },
+        "trio-click": {
+            "hashes": [
+                "sha256:0e1d5a4c4a1f7f3d28498fe1a1309a768f056285cac2394432392dc783e18732",
+                "sha256:4f2b8dfefab9b3da2690d874e2045ba4412d5ceb5755be7a9442be525c1902ab"
+            ],
+            "index": "pypi",
+            "version": "==7.0.dev5"
+        }
+    },
+    "develop": {}
+}
