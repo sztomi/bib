@@ -1,4 +1,4 @@
-from .base import ApiBase, Version
+from .base import ApiBase
 from bib.logging import get_logger
 
 from collections import OrderedDict
@@ -7,8 +7,8 @@ import packaging.version
 
 
 class JsonApi(ApiBase):
-  def __init__(self, session):
-    super().__init__(session)
+  def __init__(self, session, auth):
+    super().__init__(session, auth)
     self.log = get_logger(__name__)
 
   async def get_releases(self, package):

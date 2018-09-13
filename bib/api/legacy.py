@@ -1,4 +1,4 @@
-from .base import ApiBase, Version
+from .base import ApiBase
 from bib.logging import get_logger
 
 from collections import OrderedDict
@@ -12,14 +12,13 @@ import re
 
 
 class LegacyApi(ApiBase):
-  def __init__(self, session):
-    super().__init__(session)
+  def __init__(self, session, auth):
+    super().__init__(session, auth)
     self.log = get_logger(__name__)
 
   async def get_releases(self, package):
-    path = f"/simple/{package}"
-    self.log.debug(f"Fetching {path}")
-    resp = await self.session.get(path=path)
+    path = f"/{package}"
+    resp = await self.get(path)
     data = await trio.run_sync_in_worker_thread(parse_simple_index, resp.text)
 
     result = {}
@@ -31,6 +30,6 @@ class LegacyApi(ApiBase):
         result[ver_info] = [url]
 
     if not result:
-      raise RuntimeError(f"No wheels for {package}")
+      raise RuntimeError(f"No wheel for {package}")
 
     return OrderedDict(sorted(result.items()))
