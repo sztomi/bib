@@ -6,7 +6,6 @@ from collections import OrderedDict
 import packaging.version
 
 
-
 class JsonApi(ApiBase):
   def __init__(self, session):
     super().__init__(session)
