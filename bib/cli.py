@@ -12,7 +12,8 @@ def cli():
 @cli.command()
 @click.argument("pkg")
 @click.option("-t", "--target", default=".")
-async def install(pkg, target):
+@click.option("-i", "--index-url", default="https://pypi.org")
+async def install(pkg, target, index_url):
   from bib.installer import Installer
-  installer = Installer("https://pypi.org/pypi", target)
+  installer = Installer(index_url, target)
   await installer.fetch_pkg(pkg)
